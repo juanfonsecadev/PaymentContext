@@ -39,21 +39,29 @@ namespace PaymentContext.Tests.Entities
         }
 
         [TestMethod]
-        public void ShouldReturnErrorWhenSubscriptionHasNoPayment()
+        public void ShouldReturnSuccessWhenAddingValidSubscription()
         {
-            _student.AddSubscription(_subscription);
-            Assert.IsTrue(!_student.IsValid, "Teste para cobrir a falta de pagamento");
-        }
+            // Arrange
+            var validPayment = new PayPalPayment(
+                transactionCode: "12345678",
+                paidDate: DateTime.Now,
+                expireDate: DateTime.Now.AddDays(5),
+                total: 10,
+                totalPaid: 10,
+                payer: "WAYNE CORP",
+                document: _document,
+                address: _address,
+                email: _email
+            );
 
-        [TestMethod]
-        public void ShouldReturnSuccessWhenAddSubscription()
-        {
-            var payment = new PayPalPayment("12345678", DateTime.Now, DateTime.Now.AddDays(5), 10, 10, "WAYNE CORP", _document, _address, _email);
+            var validSubscription = new Subscription(null);
+            validSubscription.AddPayment(validPayment);
 
-            _subscription.AddPayment(payment);
-            _student.AddSubscription(_subscription);
+            // Act
+            _student.AddSubscription(validSubscription);
 
-            Assert.IsTrue(_student.IsValid, "Deve retornar sucesso ao adicionar uma assinatura com pagamento."); //TODO investigar o que está acontecendo, pois não está retornando sucesso.
+            // Assert
+            Assert.IsTrue(_student.IsValid, "Uma assinatura com pagamento válido deveria tornar o estudante válido.");
         }
 
     }

@@ -174,3 +174,4 @@ D:\Codigos\PaymentContext\PaymentContext.Tests\bin\Debug\net9.0\PaymentContext.D
 D:\Codigos\PaymentContext\PaymentContext.Tests\bin\Debug\net9.0\Flunt.dll
 D:\Codigos\PaymentContext\PaymentContext.Tests\bin\Debug\net9.0\pt-BR\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
 D:\Codigos\PaymentContext\PaymentContext.Tests\bin\Debug\net9.0\pt-BR\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\Codigos\PaymentContext\PaymentContext.Tests\obj\Debug\net9.0\PaymentContext.Tests.sourcelink.json

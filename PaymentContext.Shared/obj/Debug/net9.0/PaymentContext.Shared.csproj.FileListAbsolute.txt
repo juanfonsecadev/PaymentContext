@@ -10,3 +10,4 @@ D:\Codigos\PaymentContext\PaymentContext.Shared\obj\Debug\net9.0\refint\PaymentC
 D:\Codigos\PaymentContext\PaymentContext.Shared\obj\Debug\net9.0\PaymentContext.Shared.pdb
 D:\Codigos\PaymentContext\PaymentContext.Shared\obj\Debug\net9.0\ref\PaymentContext.Shared.dll
 D:\Codigos\PaymentContext\PaymentContext.Shared\obj\Debug\net9.0\PaymentContext.Shared.csproj.AssemblyReference.cache
+D:\Codigos\PaymentContext\PaymentContext.Shared\obj\Debug\net9.0\PaymentContext.Shared.sourcelink.json

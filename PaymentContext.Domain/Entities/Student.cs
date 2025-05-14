@@ -28,20 +28,18 @@ namespace PaymentContext.Domain.Entities
 
         public void AddSubscription(Subscription subscription)
         {
-
-            var hasSubscriptionActive = false;
-
-            foreach (var sub in _subscriptions)
-            {
-                if (sub.IsActive)
-                    hasSubscriptionActive = true;
-            }
+            var hasSubscriptionActive = _subscriptions.Any(sub => sub.IsActive);  // Lógica mais simples e direta
 
             AddNotifications(new Contract<Notification>()
                 .Requires()
                 .IsFalse(hasSubscriptionActive, "Student.Subscriptions", "Você já tem uma assinatura ativa")
-                .IsGreaterThan(0, subscription.Payments.Count, "Student.Subscription.Payments", "Essa assinatura não possui pagamentos")
+                .IsGreaterThan(subscription.Payments.Count, 0, "Student.Subscription.Payments", "Essa assinatura não possui pagamentos")
             );
+
+            if (IsValid)
+            {
+                _subscriptions.Add(subscription);
+            }
         }
     }
 }
